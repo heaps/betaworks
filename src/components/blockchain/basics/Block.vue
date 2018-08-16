@@ -61,15 +61,17 @@
                     </div>
                 </div>
 
-<div class="form-group">
+<div class="form-group"> 
                     <div class="col-sm-2">
                         <i class="icon-spinner icon-spin icon-large"></i>
                     </div>
                     <div class="col-sm-10">
                         <button id="block1chain1mineButton" data-style="expand-right" 
-                        class="btn btn-primary ladda-button"
+                        class="button btn-primary ladda-button"
                         v-on:click="processMine">
+                    
                             <span class="ladda-label">Mine</span>
+                            
                         </button>
                     </div>
                 </div>
@@ -92,24 +94,26 @@ export default {
       msg: 'Basics: Block',
       inputData: '',
       inputBlock:'1',
-      inputNonce:'',
+      inputNonce:'72608',
       inputBlockData:'',
       difficulty:4,
       maximumNonce:500000,
       activeClass:'well-success',
       errorClass:'well-error',
       isActive:true,
-      hashValue:'',
+      hashValue:'0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a',
       srcURL:'',
       bgColorSucess:'bg-success',
       bgColorErroe:'bg-danger',
+      identicon:'',
       components: {
       Navigation
   }
     }
   },
   created:function(){
-        this.processMine();
+    //    this.processMine();
+    this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL()
   },
   computed:{
     setClass: function(){
@@ -166,6 +170,7 @@ export default {
         return hash;
     }
   }
+
 }
 </script>
 <style scoped>
@@ -174,6 +179,50 @@ export default {
 }
 .well-error {
   background: rgb(250, 220, 220);
+}
+.button {
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: rgb(87, 104, 142);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #33373f}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 </style>
