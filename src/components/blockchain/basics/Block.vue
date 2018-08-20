@@ -66,21 +66,20 @@
                         <i class="icon-spinner icon-spin icon-large"></i>
                     </div>
                     <div class="col-sm-10">
-                        <button id="block1chain1mineButton" data-style="expand-right" 
-                        class="button btn-primary ladda-button"
+                        <!-- <button id="block1chain1mineButton" data-loading-text="LOADING...<span></span>"
+                        class="btn btn-primary btn-lg" 
                         v-on:click="processMine">
-                    
-                            <span class="ladda-label">Mine</span>
-                            
-                        </button>
+                            <span>Mine</span>
+                        </button> -->
+                        <!-- <vue-submit class="btn btn-primary" :progress="progress">Send</vue-submit> -->
+                        			<vue-submit class="btn btn-primary btn-xs"    :disabled='dis' :progress='progress'  :auto-progress=2000>Button 1</vue-submit>
                     </div>
                 </div>
-
         </div>
     </div> 
 </div>
 </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -106,6 +105,7 @@ export default {
       bgColorSucess:'bg-success',
       bgColorErroe:'bg-danger',
       identicon:'',
+      dis: false, progress: 0, progress2: 0,
       components: {
       Navigation
   }
@@ -147,7 +147,13 @@ export default {
       this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
     },
     processMine: function() {
-        console.log("\n\n!!!!!!processMine ");     
+        console.log("\n\n!!!!!!processMine ");  
+        //  var btn = $(this);
+        //        btn.val(btn.data("loading-text")); setTimeout(function() {
+        // btn.val('reset');
+        // }, 2000);   
+        this.progress = 1;
+				var self = this; setTimeout(function(){ self.progress = 0; }, 3000);
        this.mineBlock(this.difficulty);
     
     },
@@ -180,49 +186,6 @@ export default {
 .well-error {
   background: rgb(250, 220, 220);
 }
-.button {
-  padding: 10px;
-  font-size: 20px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: rgb(87, 104, 142);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;
-}
 
-.button:hover {background-color: #33373f}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(2px);
-}
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 
 </style>
