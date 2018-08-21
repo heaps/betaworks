@@ -610,7 +610,7 @@ export default {
     updateHash3: function() {
       console.log("\n\n!!!!!!updateHash ");    
       this.isActive3=false 
-      var value3 = this.inputBlock+this.inputNonce+this.inputBlockData;
+      var value3 = this.inputBlock3+this.inputNonce3+this.inputBlockData3;
        console.log("updateHash value="+value3);
       var hash3 = CryptoJS.SHA256(value3).toString();
       console.log(hash3);
@@ -622,7 +622,7 @@ export default {
     updateHash4: function() {
       console.log("\n\n!!!!!!updateHash ");    
       this.isActive4=false 
-      var value4 = this.inputBlock+this.inputNonce+this.inputBlockData;
+      var value4 = this.inputBlock4+this.inputNonce4+this.inputBlockData4;
        console.log("updateHash4 value="+value4);
       var hash4 = CryptoJS.SHA256(value4).toString();
       console.log(hash4);
@@ -634,7 +634,7 @@ export default {
     updateHash5: function() {
       console.log("\n\n!!!!!!updateHash ");    
       this.isActive5=false 
-      var value5 = this.inputBlock+this.inputNonce+this.inputBlockData;
+      var value5 = this.inputBlock5+this.inputNonce5+this.inputBlockData5;
        console.log("updateHash5 value="+value5);
       var hash5 = CryptoJS.SHA256(value5).toString();
       console.log(hash5);
@@ -734,27 +734,27 @@ export default {
     
     },
     calculateHash1:function(nonce1){
-        var value1 = this.inputBlock1+nonce+this.inputBlockData1;
+        var value1 = this.inputBlock1+nonce1+this.inputBlockData1;
         var hash1 = CryptoJS.SHA256(value1).toString();
         return hash1;
     },
     calculateHash2:function(nonce2){
-        var value2 = this.inputBlock2+nonce+this.inputBlockData2;
+        var value2 = this.inputBlock2+nonce2+this.inputBlockData2;
         var hash2 = CryptoJS.SHA256(value2).toString();
         return hash2;
     },
     calculateHash3:function(nonce3){
-        var value3 = this.inputBlock3+nonce+this.inputBlockData3;
+        var value3 = this.inputBlock3+nonce3+this.inputBlockData3;
         var hash3 = CryptoJS.SHA256(value3).toString();
         return hash3;
     },
     calculateHash4:function(nonce4){
-        var value4 = this.inputBlock4+nonce+this.inputBlockData4;
+        var value4 = this.inputBlock4+nonce4+this.inputBlockData4;
         var hash4 = CryptoJS.SHA256(value4).toString();
         return hash4;
     },
     calculateHash5:function(nonce5){
-        var value5 = this.inputBlock5+nonce+this.inputBlockData5;
+        var value5 = this.inputBlock5+nonce5+this.inputBlockData5;
         var hash5 = CryptoJS.SHA256(value5).toString();
         return hash5;
     }
