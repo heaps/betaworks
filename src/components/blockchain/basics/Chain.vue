@@ -9,7 +9,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block1chain1well">
-<div class="card"  v-bind:class="setColor"> 
+<div class="card"  v-bind:class="setColor1"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block2chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -19,8 +19,8 @@
                          <span class="input-group-text" id="basic-addon1">#</span>
                     </div>
              <input id="block1chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
+                 v-model="inputBlock1"
+                v-on:input="updateHash1"
                 class="form-control">
                </div>
     </div>
@@ -29,8 +29,8 @@
                     <label for="block1chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
                     <div class="col-sm-10">
                         <input id="block1chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
+                         v-model="inputNonce1"
+                         v-on:input="updateHash1"
                         class="form-control">
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                     <label for="block1chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
                     <div class="col-sm-10">
                         <textarea id="block1chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
+                        v-model="inputBlockData1"
+                        v-on:input="updateHash1"
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
@@ -56,16 +56,16 @@
                     <label for="block1chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
                     <div class="col-sm-10">
                         <input id="block1chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
+                         v-model="hashValue1">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="identicon" class="col-sm-25 control-label font-weight-bold">Identicon:</label>
+                    <label for="identicon1" class="col-sm-25 control-label font-weight-bold">Identicon:</label>
                     <div class="col-sm-10">
-                        <div id="identicon"></div>
+                        <div id="identicon1"></div>
                         <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
+                        :style="{ backgroundImage: `url('${srcURL1}')` }"></div>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
                     <div class="col-sm-10">
                         <button id="block1chain1mineButton" data-style="expand-right" 
                         class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
+                        v-on:click="processMine1">
                             <span class="ladda-label">Mine</span>
                         </button>
                     </div>
@@ -89,7 +89,7 @@
         <div class="col-6">
             <div class="card"></div>
 <div id="block2chain1well">
-<div class="card"  v-bind:class="setColor"> 
+<div class="card"  v-bind:class="setColor2"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block2chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -99,8 +99,8 @@
                          <span class="input-group-text" id="basic-addon1">#</span>
                     </div>
              <input id="block2chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
+                 v-model="inputBlock2"
+                v-on:input="updateHash2"
                 class="form-control">
                </div>
     </div>
@@ -109,8 +109,8 @@
                     <label for="block2chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
                     <div class="col-sm-10">
                         <input id="block2chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
+                         v-model="inputNonce2"
+                         v-on:input="updateHash2"
                         class="form-control">
                     </div>
                 </div>
@@ -119,8 +119,8 @@
                     <label for="block2chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
                     <div class="col-sm-10">
                         <textarea id="block2chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
+                        v-model="inputBlockData2"
+                        v-on:input="updateHash2"
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
@@ -134,7 +134,7 @@
                     <label for="block2chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
                     <div class="col-sm-10">
                         <input id="block2chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
+                         v-model="hashValue2">
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@
                     <div class="col-sm-10">
                         <div id="identicon"></div>
                         <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
+                        :style="{ backgroundImage: `url('${srcURL2}')` }"></div>
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@
                     <div class="col-sm-10">
                         <button id="block2chain1mineButton" data-style="expand-right" 
                         class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
+                        v-on:click="processMine2">
                             <span class="ladda-label">Mine</span>
                         </button>
                     </div>
@@ -167,7 +167,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block3chain1well">
-<div class="card"  v-bind:class="setColor"> 
+<div class="card"  v-bind:class="setColor3"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block3chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -177,8 +177,8 @@
                          <span class="input-group-text" id="basic-addon1">#</span>
                     </div>
              <input id="block3chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
+                 v-model="inputBlock3"
+                v-on:input="updateHash3"
                 class="form-control">
                </div>
     </div>
@@ -187,8 +187,8 @@
                     <label for="block3chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
                     <div class="col-sm-10">
                         <input id="block3chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
+                         v-model="inputNonce3"
+                         v-on:input="updateHash3"
                         class="form-control">
                     </div>
                 </div>
@@ -197,8 +197,8 @@
                     <label for="block3chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
                     <div class="col-sm-10">
                         <textarea id="block3chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
+                        v-model="inputBlockData3"
+                        v-on:input="updateHash3"
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
@@ -212,7 +212,7 @@
                     <label for="block3chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
                     <div class="col-sm-10">
                         <input id="block3chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
+                         v-model="hashValue3">
                     </div>
                 </div>
 
@@ -221,7 +221,7 @@
                     <div class="col-sm-10">
                         <div id="identicon"></div>
                         <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
+                        :style="{ backgroundImage: `url('${srcURL3}')` }"></div>
                     </div>
                 </div>
 
@@ -232,7 +232,7 @@
                     <div class="col-sm-10">
                         <button id="block3chain1mineButton" data-style="expand-right" 
                         class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
+                        v-on:click="processMine3">
                             <span class="ladda-label">Mine</span>
                         </button>
                     </div>
@@ -245,7 +245,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block4chain1well">
-<div class="card"  v-bind:class="setColor"> 
+<div class="card"  v-bind:class="setColor4"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block4chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -255,8 +255,8 @@
                          <span class="input-group-text" id="basic-addon1">#</span>
                     </div>
              <input id="block4chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
+                 v-model="inputBlock4"
+                v-on:input="updateHash4"
                 class="form-control">
                </div>
     </div>
@@ -265,8 +265,8 @@
                     <label for="block4chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
                     <div class="col-sm-10">
                         <input id="block4chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
+                         v-model="inputNonce4"
+                         v-on:input="updateHash4"
                         class="form-control">
                     </div>
                 </div>
@@ -275,8 +275,8 @@
                     <label for="block4chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
                     <div class="col-sm-10">
                         <textarea id="block4chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
+                        v-model="inputBlockData4"
+                        v-on:input="updateHash4"
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
@@ -290,7 +290,7 @@
                     <label for="block4chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
                     <div class="col-sm-10">
                         <input id="block4chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
+                         v-model="hashValue4">
                     </div>
                 </div>
 
@@ -299,7 +299,7 @@
                     <div class="col-sm-10">
                         <div id="identicon"></div>
                         <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
+                        :style="{ backgroundImage: `url('${srcURL4}')` }"></div>
                     </div>
                 </div>
 
@@ -310,7 +310,7 @@
                     <div class="col-sm-10">
                         <button id="block4chain1mineButton" data-style="expand-right" 
                         class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
+                        v-on:click="processMine4">
                             <span class="ladda-label">Mine</span>
                         </button>
                     </div>
@@ -323,7 +323,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block4chain1well">
-<div class="card"  v-bind:class="setColor"> 
+<div class="card"  v-bind:class="setColor5"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block5chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -333,8 +333,8 @@
                          <span class="input-group-text" id="basic-addon1">#</span>
                     </div>
              <input id="block5chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
+                 v-model="inputBlock5"
+                v-on:input="updateHash5"
                 class="form-control">
                </div>
     </div>
@@ -343,8 +343,8 @@
                     <label for="block5chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
                     <div class="col-sm-10">
                         <input id="block5chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
+                         v-model="inputNonce5"
+                         v-on:input="updateHash5"
                         class="form-control">
                     </div>
                 </div>
@@ -353,8 +353,8 @@
                     <label for="block5chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
                     <div class="col-sm-10">
                         <textarea id="block5chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
+                        v-model="inputBlockData5"
+                        v-on:input="updateHash5"
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
@@ -368,7 +368,7 @@
                     <label for="block5chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
                     <div class="col-sm-10">
                         <input id="block5chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
+                         v-model="hashValue5">
                     </div>
                 </div>
 
@@ -377,7 +377,7 @@
                     <div class="col-sm-10">
                         <div id="identicon"></div>
                         <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
+                        :style="{ backgroundImage: `url('${srcURL5}')` }"></div>
                     </div>
                 </div>
 
@@ -388,7 +388,7 @@
                     <div class="col-sm-10">
                         <button id="block5chain1mineButton" data-style="expand-right" 
                         class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
+                        v-on:click="processMine5">
                             <span class="ladda-label">Mine</span>
                         </button>
                     </div>
@@ -398,164 +398,9 @@
     </div> 
 </div>
         </div>
-        <div class="col-6">
-            <div class="card"></div>
-            <div id="block6chain1well">
-<div class="card"  v-bind:class="setColor"> 
-<div class="card-body">
-<form class="form-horizontal"><div class="form-group">
-<label for="block6chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
-<div class="col-sm-10">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                         <span class="input-group-text" id="basic-addon1">#</span>
-                    </div>
-             <input id="block6chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
-                class="form-control">
-               </div>
-    </div>
-        </div>
-    <div class="form-group">
-                    <label for="block6chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
-                    <div class="col-sm-10">
-                        <input id="block6chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
-                        class="form-control">
-                    </div>
-                </div>
 
-<div class="form-group">
-                    <label for="block6chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
-                    <div class="col-sm-10">
-                        <textarea id="block6chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
-                         class="form-control"></textarea>
-                    </div>
-                                        <div id="state" class="form-group">
-                        <label for="block6chain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
-                        <div class="col-sm-10">
-                            <input id="block6chain1previous" type="text" value="0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a" disabled="" class="form-control"></div>
-                            </div>
-                </div>
-
-<div id="state" class="form-group">
-                    <label for="block6chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
-                    <div class="col-sm-10">
-                        <input id="block6chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="identicon" class="col-sm-25 control-label font-weight-bold">Identicon:</label>
-                    <div class="col-sm-10">
-                        <div id="identicon"></div>
-                        <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
-                    </div>
-                </div>
-
-<div class="form-group"> 
-                    <div class="col-sm-2">
-                        <i class="icon-spinner icon-spin icon-large"></i>
-                    </div>
-                    <div class="col-sm-10">
-                        <button id="block6chain1mineButton" data-style="expand-right" 
-                        class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
-                            <span class="ladda-label">Mine</span>
-                        </button>
-                    </div>
-                </div>
-</form>
         </div>
     </div> 
-</div>
-        </div>
-        <div class="col-6">
-            <div class="card"></div>
-            <div id="block7chain1well">
-<div class="card"  v-bind:class="setColor"> 
-<div class="card-body">
-<form class="form-horizontal"><div class="form-group">
-<label for="block7chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
-<div class="col-sm-10">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                         <span class="input-group-text" id="basic-addon1">#</span>
-                    </div>
-             <input id="block7chain1number"  type="number" aria-describedby="basic-addon1"
-                 v-model="inputBlock"
-                v-on:input="updateHash"
-                class="form-control">
-               </div>
-    </div>
-        </div>
-    <div class="form-group">
-                    <label for="block7chain1nonce" class="col-sm-25 control-label font-weight-bold">Nonce:</label>
-                    <div class="col-sm-10">
-                        <input id="block7chain1nonce" type="text"
-                         v-model="inputNonce"
-                         v-on:input="updateHash"
-                        class="form-control">
-                    </div>
-                </div>
-
-<div class="form-group">
-                    <label for="block7chain1data" class="col-sm-25 control-label font-weight-bold">Data:</label>
-                    <div class="col-sm-10">
-                        <textarea id="block7chain1data" rows="3"
-                        v-model="inputBlockData"
-                        v-on:input="updateHash"
-                         class="form-control"></textarea>
-                    </div>
-                                        <div id="state" class="form-group">
-                        <label for="block7chain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
-                        <div class="col-sm-10">
-                            <input id="block7chain1previous" type="text" value="0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a" disabled="" class="form-control"></div>
-                            </div>
-                </div>
-
-<div id="state" class="form-group">
-                    <label for="block7chain1hash" class="col-sm-25 control-label font-weight-bold">Hash:</label>
-                    <div class="col-sm-10">
-                        <input id="block7chain1hash" type="text" disabled class="form-control"
-                         v-model="hashValue">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="identicon" class="col-sm-25 control-label font-weight-bold">Identicon:</label>
-                    <div class="col-sm-10">
-                        <div id="identicon"></div>
-                        <div id="roundIcon" class="identicon"
-                        :style="{ backgroundImage: `url('${srcURL}')` }"></div>
-                    </div>
-                </div>
-
-<div class="form-group"> 
-                    <div class="col-sm-2">
-                        <i class="icon-spinner icon-spin icon-large"></i>
-                    </div>
-                    <div class="col-sm-10">
-                        <button id="block7chain1mineButton" data-style="expand-right" 
-                        class="btn btn-primary ladda-button"
-                        v-on:click="processMine">
-                            <span class="ladda-label">Mine</span>
-                        </button>
-                    </div>
-                </div>
-</form>
-        </div>
-    </div> 
-</div>
-        </div>
-    </div>
-</div>
 </div>
 
 </template>
@@ -569,21 +414,64 @@ export default {
   name: 'Chain',
   data: function() {
     return {
-      msg: 'Basics: Block',
       inputData: '',
-      inputBlock:'1',
-      inputNonce:'72608',
-      inputBlockData:'',
-      difficulty:4,
+      inputBlock1:'1',
+      inputBlock2:'2',
+      inputBlock3:'3',
+      inputBlock4:'4',
+      inputBlock5:'5',
+      inputNonce1:'11316',
+      inputNonce2:'35230',
+      inputNonce3:'12937',
+      inputNonce4:'35990',
+      inputNonce5:'56265',
+      inputBlockData1:'',
+      inputBlockData2:'',
+      inputBlockData3:'',
+      inputBlockData4:'',
+      inputBlockData5:'',
+      difficulty1:4,
+      difficulty2:4,
+      difficulty3:4,
+      difficulty4:4,
+      difficulty5:4,
       maximumNonce:500000,
-      activeClass:'well-success',
-      errorClass:'well-error',
-      isActive:true,
-      hashValue:'0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a',
-      srcURL:'',
-      bgColorSucess:'bg-success',
-      bgColorErroe:'bg-danger',
-      identicon:'',
+      activeClass1:'well-success',
+      activeClass2:'well-success',
+      activeClass3:'well-success',
+      activeClass4:'well-success',
+      activeClass5:'well-success',
+      errorClass1:'well-error',
+      errorClass2:'well-error',
+      errorClass3:'well-error',
+      errorClass4:'well-error',
+      errorClass5:'well-error',
+      isActive1:true,
+      isActive2:true,
+      isActive3:true,
+      isActive4:true,
+      isActive5:true,
+      hashValue1:'000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf',
+      hashValue2:'000012fa9b916eb9078f8d98a7864e697ae83ed54f5146bd84452cdafd043c19',
+      hashValue3:'0000b9015ce2a08b61216ba5a0778545bf4ddd7ceb7bbd85dd8062b29a9140bf',
+      hashValue4:'0000ae8bbc96cf89c68be6e10a865cc47c6c48a9ebec3c6cad729646cefaef83',
+      hashValue5:'0000e4b9052fd8aae92a8afda42e2ea0f17972ea67cead67352e74dd6f7d217c',
+      srcURL1:'',
+      srcURL2:'',
+      srcURL3:'',
+      srcURL4:'',
+      srcURL5:'',
+      bgColorSucess1:'bg-success',
+      bgColorSucess2:'bg-success',
+      bgColorSucess3:'bg-success',
+      bgColorSucess4:'bg-success',
+      bgColorSucess5:'bg-success',
+      bgColorErroe1:'bg-danger',
+      bgColorErroe2:'bg-danger',
+      bgColorErroe3:'bg-danger',
+      bgColorErroe4:'bg-danger',
+      bgColorErroe5:'bg-danger',
+      identicon1:'',
       components: {
       Navigation
   }
@@ -592,66 +480,286 @@ export default {
 
 
    
-  created:function(){
+    created1:function(){
     //    this.processMine();
-    this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL()
+    this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL()
+  },
+    created2:function(){
+    //    this.processMine();
+    this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL()
+  },
+    created3:function(){
+    //    this.processMine();
+    this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL()
+  },
+    created4:function(){
+    //    this.processMine();
+    this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL()
+  },
+    created5:function(){
+    //    this.processMine();
+    this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL()
   },
   computed:{
-    setClass: function(){
-        console.log("setclass computed");
-        if(this.isActive)
-        return this.activeClass
+    setClass1: function(){
+        console.log("setclass1 computed");
+        if(this.isActive1)
+        return this.activeClass1
         else{
-             return this.errorClass
+             return this.errorClass1
         }
     },
-    setColor:function(){
-        console.log("setColor computed");
-        if(this.isActive)
-        return this.bgColorSucess
+    setClass2: function(){
+        console.log("setclass2 computed");
+        if(this.isActive2)
+        return this.activeClass2
         else{
-             return this.bgColorErroe
+             return this.errorClass2
+        }
+    },
+    setClass3: function(){
+        console.log("setclass3 computed");
+        if(this.isActive3)
+        return this.activeClass3
+        else{
+             return this.errorClass3
+        }
+    },
+    setClass4: function(){
+        console.log("setclass4 computed");
+        if(this.isActive4)
+        return this.activeClass4
+        else{
+             return this.errorClass4
+        }
+    },
+    setClass5: function(){
+        console.log("setclass5 computed");
+        if(this.isActive5)
+        return this.activeClass5
+        else{
+             return this.errorClass5
+        }
+    },
+    setColor1:function(){
+        console.log("setColor computed");
+        if(this.isActive1)
+        return this.bgColorSucess1
+        else{
+             return this.bgColorErroe1
+        }
+    },
+        setColor2:function(){
+        console.log("setColor computed");
+        if(this.isActive2)
+        return this.bgColorSucess2
+        else{
+             return this.bgColorErroe3
+        }
+    },
+        setColor3:function(){
+        console.log("setColor computed");
+        if(this.isActive3)
+        return this.bgColorSucess3
+        else{
+             return this.bgColorErroe3
+        }
+    },
+        setColor4:function(){
+        console.log("setColor computed");
+        if(this.isActive4)
+        return this.bgColorSucess4
+        else{
+             return this.bgColorErroe4
+        }
+    },
+        setColor5:function(){
+        console.log("setColor computed");
+        if(this.isActive5)
+        return this.bgColorSucess5
+        else{
+             return this.bgColorErroe5
         }
     }
   },
   methods : {
-    updateHash: function() {
-      console.log("\n\n!!!!!!updateHash ");    
-      this.isActive=false 
-      var value = this.inputBlock+this.inputNonce+this.inputBlockData;
-       console.log("updateHash value="+value);
-      var hash = CryptoJS.SHA256(value).toString();
-      console.log(hash);
+    updateHash1: function() {
+      console.log("\n\n!!!!!!updateHash1");    
+      this.isActive1=false 
+      var value1 = this.inputBlock1+this.inputNonce1+this.inputBlockData1;
+       console.log("updateHash value="+value1);
+      var hash1 = CryptoJS.SHA256(value1).toString();
+      console.log(hash1);
       //document.getElementById('block1chain1hash').value = hash;
-      this.hashValue=hash;
+      this.hashValue1=hash1;
       // If you want rounded and diagonals
-      this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();      
     },
-    processMine: function() {
+    updateHash2: function() {
+      console.log("\n\n!!!!!!updateHash2");    
+      this.isActive2=false 
+      var value2 = this.inputBlock2+this.inputNonce2+this.inputBlockData2;
+       console.log("updateHash value="+value2);
+      var hash2 = CryptoJS.SHA256(value2).toString();
+      console.log(hash2);
+      //document.getElementById('block1chain1hash').value = hash;
+      this.hashValue2=hash2;
+      // If you want rounded and diagonals
+      this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();      
+    },
+    updateHash3: function() {
+      console.log("\n\n!!!!!!updateHash ");    
+      this.isActive3=false 
+      var value3 = this.inputBlock+this.inputNonce+this.inputBlockData;
+       console.log("updateHash value="+value3);
+      var hash3 = CryptoJS.SHA256(value3).toString();
+      console.log(hash3);
+      //document.getElementById('block1chain1hash').value = hash;
+      this.hashValue3=hash3;
+      // If you want rounded and diagonals
+      this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();      
+    },
+    updateHash4: function() {
+      console.log("\n\n!!!!!!updateHash ");    
+      this.isActive4=false 
+      var value4 = this.inputBlock+this.inputNonce+this.inputBlockData;
+       console.log("updateHash4 value="+value4);
+      var hash4 = CryptoJS.SHA256(value4).toString();
+      console.log(hash4);
+      //document.getElementById('block1chain1hash').value = hash;
+      this.hashValue4=hash4;
+      // If you want rounded and diagonals
+      this.srcURL4=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
+    },
+    updateHash5: function() {
+      console.log("\n\n!!!!!!updateHash ");    
+      this.isActive5=false 
+      var value5 = this.inputBlock+this.inputNonce+this.inputBlockData;
+       console.log("updateHash5 value="+value5);
+      var hash5 = CryptoJS.SHA256(value5).toString();
+      console.log(hash5);
+      //document.getElementById('block1chain1hash').value = hash;
+      this.hashValue5=hash5;
+      // If you want rounded and diagonals
+      this.srcURL5=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
+    },
+    processMine1: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock(this.difficulty);
+       this.mineBlock1(this.difficulty1);
     
     },
-    mineBlock:function(difficulty) {
+    processMine2: function() {
+        console.log("\n\n!!!!!!processMine ");     
+       this.mineBlock2(this.difficulty2);
+    
+    },
+    processMine3: function() {
+        console.log("\n\n!!!!!!processMine ");     
+       this.mineBlock3(this.difficulty3);
+    
+    },
+    processMine4: function() {
+        console.log("\n\n!!!!!!processMine ");     
+       this.mineBlock4(this.difficulty4);
+    
+    },
+    processMine5: function() {
+        console.log("\n\n!!!!!!processMine ");     
+       this.mineBlock5(this.difficulty5);
+    
+    },
+    mineBlock1:function(difficulty1) {
         console.log("\n\n!!!!!!mineBlock "); 
-        var nonce=0;
-        while (this.hashValue.substring(0, difficulty) !== Array(difficulty + 1).join("0")&& nonce<this.maximumNonce) {
-            nonce++;
-            this.hashValue = this.calculateHash(nonce);
+        var nonce1=0;
+        while (this.hashValue1.substring(0, difficulty1) !== Array(difficulty1 + 1).join("0")&& nonce1<this.maximumNonce) {
+            nonce1++;
+            this.hashValue1 = this.calculateHash1(nonce1);
         }
-        console.log("BLOCK MINED: " + this.hashValue);
-        this.inputNonce=nonce;
-        this.isActive=true;
-        this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();
+        console.log("BLOCK MINED: " + this.hashValue1);
+        this.inputNonce1=nonce1;
+        this.isActive1=true;
+        this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();
     
     },
-    calculateHash:function(nonce){
-        var value = this.inputBlock+nonce+this.inputBlockData;
-        var hash = CryptoJS.SHA256(value).toString();
-        return hash;
+    mineBlock2:function(difficulty2) {
+        console.log("\n\n!!!!!!mineBlock "); 
+        var nonce2=0;
+        while (this.hashValue2.substring(0, difficulty2) !== Array(difficulty2 + 1).join("0")&& nonce2<this.maximumNonce) {
+            nonce2++;
+            this.hashValue2 = this.calculateHash2(nonce2);
+        }
+        console.log("BLOCK MINED: " + this.hashValue2);
+        this.inputNonce2=nonce2;
+        this.isActive2=true;
+        this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();
+    
+    },
+    mineBlock3:function(difficulty3) {
+        console.log("\n\n!!!!!!mineBlock "); 
+        var nonce3=0;
+        while (this.hashValue3.substring(0, difficulty3) !== Array(difficulty3 + 1).join("0")&& nonce3<this.maximumNonce) {
+            nonce3++;
+            this.hashValue3 = this.calculateHash3(nonce3);
+        }
+        console.log("BLOCK MINED: " + this.hashValue3);
+        this.inputNonce3=nonce3;
+        this.isActive3=true;
+        this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();
+    
+    },
+    mineBlock4:function(difficulty4) {
+        console.log("\n\n!!!!!!mineBlock "); 
+        var nonce4=0;
+        while (this.hashValue4.substring(0, difficulty4) !== Array(difficulty4 + 1).join("0")&& nonce4<this.maximumNonce) {
+            nonce4++;
+            this.hashValue4 = this.calculateHash4(nonce4);
+        }
+        console.log("BLOCK MINED: " + this.hashValue4);
+        this.inputNonce4=nonce4;
+        this.isActive4=true;
+        this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();
+    
+    },
+    mineBlock5:function(difficulty5) {
+        console.log("\n\n!!!!!!mineBlock "); 
+        var nonce5=0;
+        while (this.hashValue5.substring(0, difficulty5) !== Array(difficulty5 + 1).join("0")&& nonce5<this.maximumNonce) {
+            nonce5++;
+            this.hashValue5 = this.calculateHash5(nonce);
+        }
+        console.log("BLOCK MINED: " + this.hashValue5);
+        this.inputNonce5=nonce5;
+        this.isActive5=true;
+        this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL();
+    
+    },
+    calculateHash1:function(nonce1){
+        var value1 = this.inputBlock1+nonce+this.inputBlockData1;
+        var hash1 = CryptoJS.SHA256(value1).toString();
+        return hash1;
+    },
+    calculateHash2:function(nonce2){
+        var value2 = this.inputBlock2+nonce+this.inputBlockData2;
+        var hash2 = CryptoJS.SHA256(value2).toString();
+        return hash2;
+    },
+    calculateHash3:function(nonce3){
+        var value3 = this.inputBlock3+nonce+this.inputBlockData3;
+        var hash3 = CryptoJS.SHA256(value3).toString();
+        return hash3;
+    },
+    calculateHash4:function(nonce4){
+        var value4 = this.inputBlock4+nonce+this.inputBlockData4;
+        var hash4 = CryptoJS.SHA256(value4).toString();
+        return hash4;
+    },
+    calculateHash5:function(nonce5){
+        var value5 = this.inputBlock5+nonce+this.inputBlockData5;
+        var hash5 = CryptoJS.SHA256(value5).toString();
+        return hash5;
     }
   }
-
+   
 }
 
 
