@@ -12,7 +12,7 @@
 <div class="card"  v-bind:class="setColor1"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
-<label for="block2chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
+<label for="block1chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
 <div class="col-sm-10">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -126,7 +126,8 @@
                                         <div id="state" class="form-group">
                         <label for="block2chain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
                         <div class="col-sm-10">
-                            <input id="block2chain1previous" type="text" value="0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a" disabled="" class="form-control"></div>
+                            <input id="block2chain1previous" type="text"  disabled=""
+                             class="form-control" v-model="prevValue2"></div>
                             </div>
                 </div>
 
@@ -204,7 +205,8 @@
                                         <div id="state" class="form-group">
                         <label for="block3chain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
                         <div class="col-sm-10">
-                            <input id="block2chain1previous" type="text" value="0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a" disabled="" class="form-control"></div>
+                            <input id="block2chain1previous" type="text"  
+                            v-model="prevValue3" disabled="" class="form-control"></div>
                             </div>
                 </div>
 
@@ -282,7 +284,8 @@
                                         <div id="state" class="form-group">
                         <label for="block4chain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
                         <div class="col-sm-10">
-                            <input id="block4chain1previous" type="text" value="0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a" disabled="" class="form-control"></div>
+                            <input id="block4chain1previous" type="text" 
+                            v-model="prevValue4" disabled="" class="form-control"></div>
                             </div>
                 </div>
 
@@ -358,9 +361,10 @@
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
-                        <label for="block45hain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
+                        <label for="block5hain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
                         <div class="col-sm-10">
-                            <input id="block5chain1previous" type="text" value="0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a" disabled="" class="form-control"></div>
+                            <input id="block5chain1previous" type="text" 
+                            v-model="prevValue5" disabled="" class="form-control"></div>
                             </div>
                 </div>
 
@@ -452,6 +456,10 @@ export default {
       hashValue3:'0000b9015ce2a08b61216ba5a0778545bf4ddd7ceb7bbd85dd8062b29a9140bf',
       hashValue4:'0000ae8bbc96cf89c68be6e10a865cc47c6c48a9ebec3c6cad729646cefaef83',
       hashValue5:'0000e4b9052fd8aae92a8afda42e2ea0f17972ea67cead67352e74dd6f7d217c',
+      prevValue2:"000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf",
+      prevValue3:'000012fa9b916eb9078f8d98a7864e697ae83ed54f5146bd84452cdafd043c19',
+      prevValue4:'0000b9015ce2a08b61216ba5a0778545bf4ddd7ceb7bbd85dd8062b29a9140bf',
+      prevValue5:'0000ae8bbc96cf89c68be6e10a865cc47c6c48a9ebec3c6cad729646cefaef83',
       srcURL1:'',
       srcURL2:'',
       srcURL3:'',
@@ -588,8 +596,9 @@ export default {
       console.log(hash1);
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue1=hash1;
+      this.prevValue2=hash1;
       // If you want rounded and diagonals
-      this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();     
     },
     updateHash2: function() {
       console.log("\n\n!!!!!!updateHash2");    
@@ -600,6 +609,7 @@ export default {
       console.log(hash2);
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue2=hash2;
+      this.prevValue3=hash2;
       // If you want rounded and diagonals
       this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();      
     },
@@ -612,6 +622,7 @@ export default {
       console.log(hash3);
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue3=hash3;
+      this.prevValue4=hash3;
       // If you want rounded and diagonals
       this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();      
     },
@@ -624,6 +635,7 @@ export default {
       console.log(hash4);
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue4=hash4;
+      this.prevValue5=hash4;
       // If you want rounded and diagonals
       this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();      
     },
