@@ -3,7 +3,7 @@
 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/#/blockchain/menu">home</a></li>
+        <li class="breadcrumb-item">><a href="/#/blockchain/menu">home</a></li>
         <li class="breadcrumb-item"><a href="/#/blockchain/hash">hash</a></li>
         <li class="breadcrumb-item"><a href="/#/blockchain/block">block</a></li>
         <li class="breadcrumb-item"><a href="/#/blockchain/chain">chain</a></li>        

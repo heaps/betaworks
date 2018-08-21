@@ -63,16 +63,13 @@
 
 <div class="form-group"> 
                     <div class="col-sm-2">
-                        <i class="icon-spinner icon-spin icon-large"></i>
                     </div>
                     <div class="col-sm-10">
-                        <!-- <button id="block1chain1mineButton" data-loading-text="LOADING...<span></span>"
+                        <button id="block1chain1mineButton" 
                         class="btn btn-primary btn-lg" 
                         v-on:click="processMine">
                             <span>Mine</span>
-                        </button> -->
-                        <!-- <vue-submit class="btn btn-primary" :progress="progress">Send</vue-submit> -->
-                        			<vue-submit class="btn btn-primary btn-xs"    :disabled='dis' :progress='progress'  :auto-progress=2000>Button 1</vue-submit>
+                        </button>
                     </div>
                 </div>
         </div>
