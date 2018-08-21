@@ -430,11 +430,7 @@ export default {
       inputBlockData3:'',
       inputBlockData4:'',
       inputBlockData5:'',
-      difficulty1:4,
-      difficulty2:4,
-      difficulty3:4,
-      difficulty4:4,
-      difficulty5:4,
+      difficulty:4,
       maximumNonce:500000,
       activeClass1:'well-success',
       activeClass2:'well-success',
@@ -554,7 +550,7 @@ export default {
         if(this.isActive2)
         return this.bgColorSucess2
         else{
-             return this.bgColorErroe3
+             return this.bgColorErroe2
         }
     },
         setColor3:function(){
@@ -629,7 +625,7 @@ export default {
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue4=hash4;
       // If you want rounded and diagonals
-      this.srcURL4=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();      
     },
     updateHash5: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -641,31 +637,31 @@ export default {
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue5=hash5;
       // If you want rounded and diagonals
-      this.srcURL5=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL();      
     },
     processMine1: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock1(this.difficulty1);
+       this.mineBlock1(this.difficulty);
     
     },
     processMine2: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock2(this.difficulty2);
+       this.mineBlock2(this.difficulty);
     
     },
     processMine3: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock3(this.difficulty3);
+       this.mineBlock3(this.difficulty);
     
     },
     processMine4: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock4(this.difficulty4);
+       this.mineBlock4(this.difficulty);
     
     },
     processMine5: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock5(this.difficulty5);
+       this.mineBlock5(this.difficulty);
     
     },
     mineBlock1:function(difficulty1) {
