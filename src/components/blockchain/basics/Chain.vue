@@ -124,7 +124,7 @@
                          class="form-control"></textarea>
                     </div>
                                         <div id="state" class="form-group">
-                        <label for="block2chain1previous" class="col-sm-25 control-label font-weight-bold">Prev:</label>
+                        <label for="block2chain1previous"  class="col-sm-25 control-label font-weight-bold">Prev:</label>
                         <div class="col-sm-10">
                             <input id="block2chain1previous" type="text"  disabled=""
                              class="form-control" v-model="prevValue2"></div>
@@ -393,7 +393,7 @@
                         <button id="block5chain1mineButton" data-style="expand-right" 
                         class="btn btn-primary ladda-button"
                         v-on:click="processMine5">
-                            <span class="ladda-label">Mine</span>
+                            <span class="ladda-label">{{buttonmsg}}</span>
                         </button>
                     </div>
                 </div>
@@ -418,6 +418,7 @@ export default {
   name: 'Chain',
   data: function() {
     return {
+        buttonmsg:"Mine",
       inputData: '',
       inputBlock1:'1',
       inputBlock2:'2',
@@ -451,6 +452,7 @@ export default {
       isActive3:true,
       isActive4:true,
       isActive5:true,
+      prevValue1:"0000000000000000000000000000000000000000000000000000000000000000",
       hashValue1:'000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf',
       hashValue2:'000012fa9b916eb9078f8d98a7864e697ae83ed54f5146bd84452cdafd043c19',
       hashValue3:'0000b9015ce2a08b61216ba5a0778545bf4ddd7ceb7bbd85dd8062b29a9140bf',
@@ -460,11 +462,11 @@ export default {
       prevValue3:'000012fa9b916eb9078f8d98a7864e697ae83ed54f5146bd84452cdafd043c19',
       prevValue4:'0000b9015ce2a08b61216ba5a0778545bf4ddd7ceb7bbd85dd8062b29a9140bf',
       prevValue5:'0000ae8bbc96cf89c68be6e10a865cc47c6c48a9ebec3c6cad729646cefaef83',
-      srcURL1:'',
-      srcURL2:'',
-      srcURL3:'',
-      srcURL4:'',
-      srcURL5:'',
+      srcURL1:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
+      srcURL2:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
+      srcURL3:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
+      srcURL4:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
+      srcURL5:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
       bgColorSucess1:'bg-success',
       bgColorSucess2:'bg-success',
       bgColorSucess3:'bg-success',
@@ -598,7 +600,8 @@ export default {
       this.hashValue1=hash1;
       this.prevValue2=hash1;
       // If you want rounded and diagonals
-      this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();     
+      this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();   
+      this.updateHash2()
     },
     updateHash2: function() {
       console.log("\n\n!!!!!!updateHash2");    
@@ -611,7 +614,8 @@ export default {
       this.hashValue2=hash2;
       this.prevValue3=hash2;
       // If you want rounded and diagonals
-      this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();  
+       this.updateHash3()    
     },
     updateHash3: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -625,6 +629,7 @@ export default {
       this.prevValue4=hash3;
       // If you want rounded and diagonals
       this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();      
+       this.updateHash4()
     },
     updateHash4: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -637,7 +642,8 @@ export default {
       this.hashValue4=hash4;
       this.prevValue5=hash4;
       // If you want rounded and diagonals
-      this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();     
+       this.updateHash5() 
     },
     updateHash5: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -653,13 +659,13 @@ export default {
     },
     processMine1: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock1(this.difficulty);
-    
+        this.mineBlock1(this.difficulty);
+
     },
     processMine2: function() {
         console.log("\n\n!!!!!!processMine ");     
-       this.mineBlock2(this.difficulty);
-    
+        this.mineBlock2(this.difficulty);
+
     },
     processMine3: function() {
         console.log("\n\n!!!!!!processMine ");     
@@ -672,14 +678,16 @@ export default {
     
     },
     processMine5: function() {
+        this.buttonmsg = "Mining..."
         console.log("\n\n!!!!!!processMine ");     
        this.mineBlock5(this.difficulty);
+        this.buttonmsg = "Mine"
     
     },
-    mineBlock1:function(difficulty1) {
+    mineBlock1:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock "); 
         var nonce1=0;
-        while (this.hashValue1.substring(0, difficulty1) !== Array(difficulty1 + 1).join("0")&& nonce1<this.maximumNonce) {
+        while (this.hashValue1.substring(0, difficulty) !== Array(difficulty + 1).join("0")&& nonce1<this.maximumNonce) {
             nonce1++;
             this.hashValue1 = this.calculateHash1(nonce1);
         }
@@ -687,12 +695,13 @@ export default {
         this.inputNonce1=nonce1;
         this.isActive1=true;
         this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();
-    
+        this.prevValue2 = this.hashValue1
+        this.mineBlock2(this.difficulty)
     },
-    mineBlock2:function(difficulty2) {
-        console.log("\n\n!!!!!!mineBlock "); 
+    mineBlock2:function(difficulty) {
+        console.log("\n\n!!!!!!mineBlock2 "); 
         var nonce2=0;
-        while (this.hashValue2.substring(0, difficulty2) !== Array(difficulty2 + 1).join("0")&& nonce2<this.maximumNonce) {
+        while (this.hashValue2.substring(0, difficulty) !== Array(difficulty + 1).join("0")&& nonce2<this.maximumNonce) {
             nonce2++;
             this.hashValue2 = this.calculateHash2(nonce2);
         }
@@ -700,12 +709,13 @@ export default {
         this.inputNonce2=nonce2;
         this.isActive2=true;
         this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();
-    
+        this.prevValue3 = this.hashValue2
+    this.mineBlock3(this.difficulty)
     },
-    mineBlock3:function(difficulty3) {
+    mineBlock3:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock "); 
         var nonce3=0;
-        while (this.hashValue3.substring(0, difficulty3) !== Array(difficulty3 + 1).join("0")&& nonce3<this.maximumNonce) {
+        while (this.hashValue3.substring(0, difficulty) !== Array(difficulty + 1).join("0")&& nonce3<this.maximumNonce) {
             nonce3++;
             this.hashValue3 = this.calculateHash3(nonce3);
         }
@@ -713,12 +723,14 @@ export default {
         this.inputNonce3=nonce3;
         this.isActive3=true;
         this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();
+        this.prevValue4 = this.hashValue3
+        this.mineBlock4(this.difficulty)
     
     },
-    mineBlock4:function(difficulty4) {
+    mineBlock4:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock "); 
         var nonce4=0;
-        while (this.hashValue4.substring(0, difficulty4) !== Array(difficulty4 + 1).join("0")&& nonce4<this.maximumNonce) {
+        while (this.hashValue4.substring(0, difficulty) !== Array(difficulty + 1).join("0")&& nonce4<this.maximumNonce) {
             nonce4++;
             this.hashValue4 = this.calculateHash4(nonce4);
         }
@@ -726,14 +738,16 @@ export default {
         this.inputNonce4=nonce4;
         this.isActive4=true;
         this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();
+        this.prevValue5 = this.hashValue4
+        this.mineBlock5(this.difficulty)
     
     },
-    mineBlock5:function(difficulty5) {
+    mineBlock5:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock "); 
         var nonce5=0;
-        while (this.hashValue5.substring(0, difficulty5) !== Array(difficulty5 + 1).join("0")&& nonce5<this.maximumNonce) {
+        while (this.hashValue5.substring(0, difficulty) !== Array(difficulty + 1).join("0")&& nonce5<this.maximumNonce) {
             nonce5++;
-            this.hashValue5 = this.calculateHash5(nonce);
+            this.hashValue5 = this.calculateHash5(nonce5);
         }
         console.log("BLOCK MINED: " + this.hashValue5);
         this.inputNonce5=nonce5;
@@ -741,29 +755,30 @@ export default {
         this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL();
     
     },
+
     calculateHash1:function(nonce1){
         var value1 = this.inputBlock1+nonce1+this.inputBlockData1;
-        var hash1 = CryptoJS.SHA256(value1).toString();
+        var hash1 = CryptoJS.SHA256(this.inputBlock1 +  nonce1 + this.inputBlockData1 + this.prevValue1).toString();
         return hash1;
     },
     calculateHash2:function(nonce2){
         var value2 = this.inputBlock2+nonce2+this.inputBlockData2;
-        var hash2 = CryptoJS.SHA256(value2).toString();
+        var hash2 = CryptoJS.SHA256(this.inputBlock2 +  nonce2 + this.inputBlockData2 + this.prevValue2).toString();
         return hash2;
     },
     calculateHash3:function(nonce3){
         var value3 = this.inputBlock3+nonce3+this.inputBlockData3;
-        var hash3 = CryptoJS.SHA256(value3).toString();
+        var hash3 = CryptoJS.SHA256(this.inputBlock3 +  nonce3 + this.inputBlockData3 + this.prevValue3).toString();
         return hash3;
     },
     calculateHash4:function(nonce4){
         var value4 = this.inputBlock4+nonce4+this.inputBlockData4;
-        var hash4 = CryptoJS.SHA256(value4).toString();
+        var hash4 = CryptoJS.SHA256(this.inputBlock4 +  nonce4 + this.inputBlockData4 + this.prevValue4).toString();
         return hash4;
     },
     calculateHash5:function(nonce5){
         var value5 = this.inputBlock5+nonce5+this.inputBlockData5;
-        var hash5 = CryptoJS.SHA256(value5).toString();
+        var hash5 = CryptoJS.SHA256(this.inputBlock5 +  nonce5 + this.inputBlockData5 + this.prevValue5).toString();
         return hash5;
     }
   }

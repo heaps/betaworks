@@ -100,7 +100,7 @@ export default {
       hashValue:'0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a',
       srcURL:'',
       bgColorSucess:'bg-success',
-      bgColorErroe:'bg-danger',
+      bgColorErroe:'background-danger',
       identicon:'',
       dis: false, progress: 0, progress2: 0,
       components: {
@@ -177,6 +177,7 @@ export default {
 }
 </script>
 <style scoped>
+
 .well-success {
   background: rgb(223, 240, 216);
 }
