@@ -9,16 +9,16 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item" id="NavbarHome">
+          <li class="nav-item" v-bind:class="{ active: navItems.HomeIsActive }">
             <a class="nav-link" href="/#/">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item" id="NavbarBlockchain">
-            <a class="nav-link" href="/#/blockchain/menu">Blockchain <span class="sr-only">(current)</span></a>
+          <li class="nav-item" v-bind:class="{ active: navItems.BlockchainIsActive }">
+            <a class="nav-link" href="/#/blockchain/landingPage">Blockchain <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item" id="NavbarCybersecurity">
+          <li class="nav-item" v-bind:class="{ active: navItems.CybersecurityIsActive }">
             <a class="nav-link" href="/#/cybersecurity">Cybersecurity</a>
           </li>
-          <li class="nav-item dropdown" id="NavbarAI">
+          <li class="nav-item dropdown" v-bind:class="{ active: navItems.AiIsActive }">
             <a class="nav-link dropdown-toggle" href="/#/ai" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               AI
             </a>
@@ -29,7 +29,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item" id="NavbarCloud">
+          <li class="nav-item" v-bind:class="{ active: navItems.CloudIsActive }">
             <a class="nav-link disabled" href="/#/cloud">Cloud</a>
           </li>
         </ul>
@@ -48,30 +48,44 @@
 
 export default {
   name: 'Navigation',
+  methods : {
+    getNavigation : function(){
+
+      var path = this.$route.path;
+      //console.log('in components/blockchain/navigation getNavigation path: ' + path);
+      path = path.split('/');
+      path = path[1];
+      //console.log('in components/blockchain/navigation getNavigation path: ' + path);
+
+      var navItems = {
+        HomeIsActive         : false,
+        BlockchainIsActive   : false,
+        CybersecurityIsActive: false,
+        AiIsActive           : false,
+        CloudIsActive        : false,
+      };
+
+      navItems.HomeIsActive          = (!path                   ) ? true : false;
+      navItems.BlockchainIsActive    = (path === 'blockchain'   ) ? true : false;
+      navItems.CybersecurityIsActive = (path === 'cybersecurity') ? true : false;
+      navItems.AiIsActive            = (path === 'ai'           ) ? true : false;
+      navItems.CloudIsActive         = (path === 'cloud'        ) ? true : false;
+
+      // return active path
+      return navItems;
+    }
+  },    
+  data: function(){
+    var navItems = this.getNavigation();    
+    return { navItems };  
+  },
   watch:{
       $route (to, from){
-        // -- TODO: detect if on same section and avoid recompute   
-
-        console.log('Hello World from global navigation bar!');
-        var path = window.location.hash;
-        path = path.split('/');
-        path = path[1];
-
-        // remove all active menu elements
-        document.getElementById('NavbarHome').classList.remove("active");
-        document.getElementById('NavbarBlockchain').classList.remove("active");
-        document.getElementById('NavbarCybersecurity').classList.remove("active");
-        document.getElementById('NavbarAI').classList.remove("active");
-        document.getElementById('NavbarCloud').classList.remove("active");
-
-        // add active menu element
-        if (path === '') document.getElementById('NavbarHome').classList.add("active");
-        else if (path === 'blockchain') document.getElementById('NavbarBlockchain').classList.add("active");
-        else if (path === 'cybersecurity') document.getElementById('NavbarCybersecurity').classList.add("active");
-        else if (path === 'ai') document.getElementById('NavbarAI').classList.add("active");
-        else if (path === 'cloud') document.getElementById('NavbarCloud').classList.add("active");
+          var navItems = this.getNavigation();
+          //console.log('in components/blockchain/navigation data path: ' + JSON.stringify(navItems));
+          this.navItems = navItems;
       }
-  }
+  }    
 
 }
 </script>

@@ -8,8 +8,10 @@
         <h1 class="display-4">Blockchain</h1>
         <p class="lead">A blockchain is a list of records, called blocks, which are linked using cryptography.</p>
 
+        <!-- Basics Bread Crumbs Navigation -->
+        <BasicsNavigation/>
 
-        <div class="card" style="width: 36rem;">
+        <div class="card">
           <h5 class="card-header">Basics</h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="/#/blockchain/hash">Hash</a></li>
@@ -23,7 +25,10 @@
 
         <div style="padding: 25px;"></div>
 
-        <div class="card" style="width: 36rem;">
+        <!-- Keys Bread Crumbs Navigation -->
+        <KeysNavigation/>
+
+        <div class="card">
             <h5 class="card-header">Keys</h5>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><a href="/#/blockchain/keys">Keys</a></li>
@@ -35,7 +40,10 @@
 
         <div style="padding: 25px;"></div>
 
-        <div class="card" style="width: 36rem;">
+        <!-- Live Bread Crumbs Navigation -->
+        <LiveNavigation/>
+
+        <div class="card">
             <h5 class="card-header">Intereacting with the Live Blockchain</h5>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">Create a Transaction - Transfer Funds</li>
@@ -47,8 +55,24 @@
 
 
       </div>
+      <div style="padding: 25px;"></div>      
       <!-- END: blockchain menu -->
 
 
   </div>
 </template>
+
+<script>
+
+import BasicsNavigation from '@/components/blockchain/basics/Navigation.vue'
+import KeysNavigation from '@/components/blockchain/keys/Navigation.vue'
+import LiveNavigation from '@/components/blockchain/live/Navigation.vue'
+
+export default {
+  name: 'Menu',
+  components: {
+      BasicsNavigation,KeysNavigation,LiveNavigation 
+  }
+}
+
+</script>

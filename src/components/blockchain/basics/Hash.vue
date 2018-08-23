@@ -3,9 +3,6 @@
     <!-- --------------------- START --------------------- -->
     <div class="container">
 
-          <!-- Navigation -->
-          <Navigation/>          
-
           <!-- card start -->
           <div class="card bg-light mb-3">
             <h5 class="card-header">{{ msg }}</h5>
@@ -48,13 +45,8 @@
 
 <script>
 
-import Navigation from '@/components/blockchain/basics/Navigation.vue'
-
 export default {
   name: 'Hash',
-  components: {
-      Navigation
-  },
   data: function() {
     return {
       msg: 'Basics: SHA256 Hash',
@@ -63,12 +55,12 @@ export default {
   },
   methods : {
     processInputData : function(data){
-      console.log(data);
-      console.log(data.srcElement);
-      console.log(data.srcElement.value);      
+      // console.log(data);
+      // console.log(data.srcElement);
+      // console.log(data.srcElement.value);      
       var value = data.srcElement.value;
       var hash = CryptoJS.SHA256(value).toString();
-      console.log(hash);
+      //console.log(hash);
       document.getElementById('hash').value = hash;
 
       // create identicon
@@ -77,16 +69,20 @@ export default {
     }
   },
   mounted: function () {
-      // onload input data always empty
-      console.log('in mounted');
+      //console.log('in mounted');
       var empty = '';
       var hash = CryptoJS.SHA256(empty).toString();
-      console.log(hash);
+      //console.log(hash);
       document.getElementById('hash').value = hash;
 
       // create identicon for empty input
       var roundIcon = document.getElementById('roundIcon');
       roundIcon.style.backgroundImage = 'url(' + hqx(blockies.create({ seed:hash ,size: 8,scale: 3}),4).toDataURL()+')';
+
+      // path
+      //console.log('------------ START ------------');
+      //console.log(this.$route);
+      //console.log('------------ START ------------');      
   }    
 
 }

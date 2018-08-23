@@ -3,30 +3,23 @@
 
 
             <div class="card bg-light mb-3">
-              <h5 class="card-header">Digital Transformation</h5>
+              <h5 class="card-header">Sections</h5>
     
               <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-light">
-                    <h5 class="card-title">Blockchain</h5>
-                    <p class="card-text">Blockchain description ...</p>
-                    <a href="#" class="btn btn-primary">Go to content ...</a>                                    
+                    <a href="/#/blockchain/landingPage">
+                      <h1 style="color:#4674c1;">Blockchain</h1>
+                    </a>
                 </li>
                 <li class="list-group-item bg-light">
-                    <h5 class="card-title">Cybersecurity</h5>
-                    <p class="card-text">Cybersecurity description ...</p>
-                    <a href="#" class="btn btn-primary">Go to content ...</a>
-                                    
+                    <h1 style="color:#eb7d3c;">Cybersecurity</h1>
                 </li>
                 <li class="list-group-item bg-light">
-                    <h5 class="card-title">AI</h5>
-                    <p class="card-text">AI description ...</p>
-                <a href="#" class="btn btn-primary">Go to content ...</a>
+                    <h1 style="color:#72ac4d;">Artificial Intelligence (AI)</h1>
                 </li>
               </ul>              
               <div class="card-body">
-                <h5 class="card-title">Cloud</h5>
-                <p class="card-text">Cloud description ...</p>
-                <a href="#" class="btn btn-primary">Go to content ...</a>
+                <h1 style="color:#fdbf2d;">Cloud</h1>
               </div>
 
             </div>

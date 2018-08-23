@@ -4,6 +4,7 @@
      <!-- Navigation -->
     <Navigation/>    
 
+<<<<<<< HEAD
 <div class="container-fluid">
     <div class="row flex-row flex-nowrap">
         <div class="col-6">
@@ -794,3 +795,9 @@ export default {
 </style>
 
 
+=======
+    <h1>chain.vue</h1>
+
+  </div>
+</template>
+>>>>>>> 9c92b4fd9948f6f7be76141bd3b6bd9b234dec8f
