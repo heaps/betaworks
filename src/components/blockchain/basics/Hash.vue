@@ -49,9 +49,9 @@ export default {
   name: 'Hash',
   data: function() {
     return {
-      msg: 'Basics: SHA256 Hash',
+      msg: 'Blockchain Basics: SHA256 Hash',
       inputData: ''
-    }
+    };
   },
   methods : {
     processInputData : function(data){

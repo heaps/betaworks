@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ navigation }}</h1>
 
     <div v-if="navigation === 'BasicsNavigation'">
       <BasicsNavigation/>

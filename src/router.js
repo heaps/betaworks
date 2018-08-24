@@ -1,5 +1,7 @@
 import Vue    from 'vue'
 import Router from 'vue-router'
+
+// main sections: blockchain, security, AI, and cloud
 import Home               from './views/Home.vue'
 import Blockchain         from './views/Blockchain.vue'
 import Cybersecurity      from './views/Cybersecurity.vue'
