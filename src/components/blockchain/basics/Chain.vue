@@ -4,13 +4,13 @@
      <!-- Navigation -->
     <Navigation/>    
 
-<<<<<<< HEAD
+
 <div class="container-fluid">
     <div class="row flex-row flex-nowrap">
         <div class="col-6">
             <div class="card"></div>
             <div id="block1chain1well">
-<div class="card"  v-bind:class="setColor1"> 
+<div class="card"  v-bind:style="{ backgroundColor: color1}"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block1chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -90,7 +90,7 @@
         <div class="col-6">
             <div class="card"></div>
 <div id="block2chain1well">
-<div class="card"  v-bind:class="setColor2"> 
+<div class="card"  v-bind:style="{ backgroundColor: color2}"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block2chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -169,7 +169,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block3chain1well">
-<div class="card"  v-bind:class="setColor3"> 
+<div class="card"  v-bind:style="{ backgroundColor: color3}"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block3chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -248,7 +248,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block4chain1well">
-<div class="card"  v-bind:class="setColor4"> 
+<div class="card"  v-bind:style="{ backgroundColor: color4}"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block4chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -327,7 +327,7 @@
         <div class="col-6">
             <div class="card"></div>
             <div id="block4chain1well">
-<div class="card"  v-bind:class="setColor5"> 
+<div class="card"  v-bind:style="{ backgroundColor: color5}"> 
 <div class="card-body">
 <form class="form-horizontal"><div class="form-group">
 <label for="block5chain1number" class="col-sm-25 control-label font-weight-bold">Block:</label>
@@ -420,6 +420,11 @@ export default {
   data: function() {
     return {
         buttonmsg:"Mine",
+        color1: '#E0F0D9',
+        color2: '#E0F0D9',
+        color3: '#E0F0D9',
+        color4: '#E0F0D9',
+        color5: '#E0F0D9',
       inputData: '',
       inputBlock1:'1',
       inputBlock2:'2',
@@ -548,44 +553,44 @@ export default {
              return this.errorClass5
         }
     },
-    setColor1:function(){
+         setColor1:function(){
         console.log("setColor computed");
         if(this.isActive1)
-        return this.bgColorSucess1
+        return this.color1
         else{
-             return this.bgColorErroe1
+             return this.color1
         }
     },
         setColor2:function(){
         console.log("setColor computed");
         if(this.isActive2)
-        return this.bgColorSucess2
+        return this.color2
         else{
-             return this.bgColorErroe2
+             return this.color2
         }
     },
         setColor3:function(){
         console.log("setColor computed");
         if(this.isActive3)
-        return this.bgColorSucess3
+        return this.color3
         else{
-             return this.bgColorErroe3
+             return this.color3
         }
     },
         setColor4:function(){
         console.log("setColor computed");
         if(this.isActive4)
-        return this.bgColorSucess4
+        return this.color4
         else{
-             return this.bgColorErroe4
+             return this.color4
         }
     },
         setColor5:function(){
         console.log("setColor computed");
         if(this.isActive5)
-        return this.bgColorSucess5
+        return this.color4
         else{
-             return this.bgColorErroe5
+             return this.color5
         }
     }
   },
@@ -603,6 +608,7 @@ export default {
       // If you want rounded and diagonals
       this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();   
       this.updateHash2()
+      this.color1 = '#F9DCDD'
     },
     updateHash2: function() {
       console.log("\n\n!!!!!!updateHash2");    
@@ -616,7 +622,8 @@ export default {
       this.prevValue3=hash2;
       // If you want rounded and diagonals
       this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();  
-       this.updateHash3()    
+       this.updateHash3()   
+       this.color2 = '#F9DCDD' 
     },
     updateHash3: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -631,6 +638,7 @@ export default {
       // If you want rounded and diagonals
       this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();      
        this.updateHash4()
+       this.color3 = '#F9DCDD'
     },
     updateHash4: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -645,6 +653,7 @@ export default {
       // If you want rounded and diagonals
       this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();     
        this.updateHash5() 
+       this.color4 = '#F9DCDD'
     },
     updateHash5: function() {
       console.log("\n\n!!!!!!updateHash ");    
@@ -656,7 +665,8 @@ export default {
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue5=hash5;
       // If you want rounded and diagonals
-      this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL();   
+      this.color5 = '#F9DCDD'   
     },
     processMine1: function() {
         console.log("\n\n!!!!!!processMine ");     
@@ -698,6 +708,7 @@ export default {
         this.srcURL1=hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL();
         this.prevValue2 = this.hashValue1
         this.mineBlock2(this.difficulty)
+        this.color1 = '#E0F0D9' 
     },
     mineBlock2:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock2 "); 
@@ -712,6 +723,7 @@ export default {
         this.srcURL2=hqx(blockies.create({ seed: this.hashValue2 ,size: 8,scale: 3}),4).toDataURL();
         this.prevValue3 = this.hashValue2
     this.mineBlock3(this.difficulty)
+    this.color2 = '#E0F0D9' 
     },
     mineBlock3:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock "); 
@@ -726,7 +738,8 @@ export default {
         this.srcURL3=hqx(blockies.create({ seed: this.hashValue3 ,size: 8,scale: 3}),4).toDataURL();
         this.prevValue4 = this.hashValue3
         this.mineBlock4(this.difficulty)
-    
+    this.color3 = '#E0F0D9' 
+
     },
     mineBlock4:function(difficulty) {
         console.log("\n\n!!!!!!mineBlock "); 
@@ -741,6 +754,7 @@ export default {
         this.srcURL4=hqx(blockies.create({ seed: this.hashValue4 ,size: 8,scale: 3}),4).toDataURL();
         this.prevValue5 = this.hashValue4
         this.mineBlock5(this.difficulty)
+        this.color4 = '#E0F0D9' 
     
     },
     mineBlock5:function(difficulty) {
@@ -754,6 +768,7 @@ export default {
         this.inputNonce5=nonce5;
         this.isActive5=true;
         this.srcURL5=hqx(blockies.create({ seed: this.hashValue5 ,size: 8,scale: 3}),4).toDataURL();
+        this.color5 = '#E0F0D9' 
     
     },
 
@@ -796,8 +811,3 @@ export default {
 
 
 =======
-    <h1>chain.vue</h1>
-
-  </div>
-</template>
->>>>>>> 9c92b4fd9948f6f7be76141bd3b6bd9b234dec8f

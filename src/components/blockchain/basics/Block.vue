@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
 
-<<<<<<< HEAD
     <!-- Navigation -->
     <Navigation/>          
 
@@ -188,9 +187,4 @@ export default {
 
 
 </style>
-=======
-    <h1>Block.vue</h1>
 
-  </div>
-</template>
->>>>>>> 9c92b4fd9948f6f7be76141bd3b6bd9b234dec8f

@@ -17,5 +17,5 @@
      components:{
         Navigation
      }
-    }
+    } 
 </script>
