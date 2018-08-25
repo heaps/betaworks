@@ -6,7 +6,7 @@
 
 <div>
 <div class="container">
-    <div class="card" v-bind:class="setColor">
+    <div class="card" v-bind:style="{ backgroundColor: color}">
     <h3 class="card-header"> {{ msg }}</h3>
 
     <div class="card-body" >
@@ -88,6 +88,7 @@ export default {
   data: function() {
     return {
       msg: 'Basics: Block',
+      color: '#E0F0D9',
       inputData: '',
       inputBlock:'1',
       inputNonce:'72608',
@@ -99,8 +100,6 @@ export default {
       isActive:true,
       hashValue:'0000f727854b50bb95c054b39c1fe5c92e5ebcfa4bcb5dc279f56aa96a365e5a',
       srcURL:'',
-      bgColorSucess:'bg-success',
-      bgColorErroe:'background-danger',
       identicon:'',
       dis: false, progress: 0, progress2: 0,
       components: {
@@ -124,9 +123,9 @@ export default {
     setColor:function(){
         console.log("setColor computed");
         if(this.isActive)
-        return this.bgColorSucess
+        return this.color
         else{
-             return this.bgColorErroe
+             return this.color
         }
     }
   },
@@ -141,7 +140,8 @@ export default {
       //document.getElementById('block1chain1hash').value = hash;
       this.hashValue=hash;
       // If you want rounded and diagonals
-      this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();      
+      this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();     
+      this.color = '#F9DCDD' 
     },
     processMine: function() {
         console.log("\n\n!!!!!!processMine ");  
@@ -165,6 +165,7 @@ export default {
         this.inputNonce=nonce;
         this.isActive=true;
         this.srcURL=hqx(blockies.create({ seed: this.hashValue ,size: 8,scale: 3}),4).toDataURL();
+        this.color = '#E0F0D9' 
     
     },
     calculateHash:function(nonce){

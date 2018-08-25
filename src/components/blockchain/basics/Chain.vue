@@ -473,16 +473,6 @@ export default {
       srcURL3:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
       srcURL4:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
       srcURL5:hqx(blockies.create({ seed: this.hashValue1 ,size: 8,scale: 3}),4).toDataURL(),
-      bgColorSucess1:'bg-success',
-      bgColorSucess2:'bg-success',
-      bgColorSucess3:'bg-success',
-      bgColorSucess4:'bg-success',
-      bgColorSucess5:'bg-success',
-      bgColorErroe1:'bg-danger',
-      bgColorErroe2:'bg-danger',
-      bgColorErroe3:'bg-danger',
-      bgColorErroe4:'bg-danger',
-      bgColorErroe5:'bg-danger',
       identicon1:'',
       components: {
       Navigation
@@ -588,7 +578,7 @@ export default {
         setColor5:function(){
         console.log("setColor computed");
         if(this.isActive5)
-        return this.color4
+        return this.color5
         else{
              return this.color5
         }
