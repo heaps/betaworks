@@ -46,8 +46,8 @@
                           <input id="hash" type="text" disabled v-model="hash" class="form-control">
                         </div>
                         <div class="col-auto">
-                          <button type="button" v-on:click="mineBlock" class="btn btn-primary" v-bind:class="{ disabled: disabled }">
-                            {{ buttonText }}
+                          <button class="btn btn-primary ladda-button"  data-style="expand-right" id="mineButton" v-on:click="mineBlock">
+                            <span class="ladda-label">Mine</span>
                           </button>
                         </div>                        
                     </div><br>
@@ -96,11 +96,10 @@ export default {
       hash : '',
       color: '#E0F0D9',
       mineCounter  : 0,
-      disabled     : false,
-      buttonText   : 'Mine',
       show         : false,
       miningSuccess: true,
-      miningMessage: ''
+      miningMessage: '',
+      l            : null
     };
   },
   methods : {
@@ -111,7 +110,6 @@ export default {
         var text  = block + nonce + data;
         var hash  = CryptoJS.SHA256(text).toString();
         this.hash = hash;
-        //console.log('block: ' + block + ', nonce: ' + nonce + ', data:  ' + data);        
         return hash;
     },
     setColor : function(hash){
@@ -129,44 +127,42 @@ export default {
     },
     mineBlock : function(){
 
-        this.disabled      = true;
-        this.buttonText    = 'Working';
         this.show          = true;
         this.miningMessage = 'Mining Block';
-        this.miningSuccess = true;
+        this.miningSuccess = true;        
+        this.l.toggle();
 
         setTimeout(function(){
 
-            var found = false;
             var hash  = '';
             var start = '';
             var text  = '';
             var limit = 1000000;
 
-            for (var i=0; i<=limit && !found; i++) {
+            for (var i=0; i<=limit; i++) {
                 text  = this.block + i + this.data;
                 hash  = CryptoJS.SHA256(text).toString();
-
                 start = hash.slice(0,4);
-                //if(i%1000 === 0) console.log('i: ' + i);            
+
+                // hash pattern found
                 if(start === '0000'){
                     this.color = '#E0F0D9';
                     this.nonce = i;
                     this.hash = hash;
-                    found = true;
-                    this.buttonText = 'Mine';
-                    this.disabled = false; 
+                    this.l.toggle();
 
                     // set success message
                     this.miningMessage = 'Mining Success!';
-                    setTimeout(() => this.show = false, 3000);                    
+                    setTimeout(() => this.show = false, 3000);
+                    return;
                 }
+                // not found                
                 else if (i === limit){
-                    this.buttonText = 'Mine';
-                    this.disabled = false;                                         
                     this.miningMessage = 'Mining Failed!';
                     this.miningSuccess = false;
+                    this.l.toggle();                    
                     setTimeout(() => this.show = false, 3000);
+                    return;
                 }
             }        
 
@@ -176,6 +172,7 @@ export default {
   },
   mounted: function () {
     this.processInputData();
+    this.l = Ladda.create(document.getElementById('mineButton'));
   }    
 
 };
