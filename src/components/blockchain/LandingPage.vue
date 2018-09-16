@@ -46,10 +46,13 @@
         <div class="card">
             <h5 class="card-header">Intereacting with the Live Blockchain</h5>
             <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="/#/blockchain/track">Blockchain Explorer</a></li>
+              <li class="list-group-item"><a href="/#/blockchain/account">Create Account</a></li>
+              <li class="list-group-item"><a href="/#/blockchain/transactions">Transactions</a></li>
               <li class="list-group-item">Create a Transaction - Transfer Funds</li>
-              <li class="list-group-item">Track Transactions</li>
-              <li class="list-group-item">Create a Smart Contract</li>
+              <li class="list-group-item"><a href="/#/blockchain/contract">Create a Smart Contract</a></li>
               <li class="list-group-item">Create a Crypto Currency</li>
+              <li class="list-group-item">Steal Crypto Currency (Not Really)</li>
             </ul>
           </div>      
 
@@ -65,13 +68,13 @@
 <script>
 
 import BasicsNavigation from '@/components/blockchain/basics/Navigation.vue'
-import KeysNavigation from '@/components/blockchain/keys/Navigation.vue'
-import LiveNavigation from '@/components/blockchain/live/Navigation.vue'
+import KeysNavigation   from '@/components/blockchain/keys/Navigation.vue'
+import LiveNavigation   from '@/components/blockchain/live/Navigation.vue'
 
 export default {
   name: 'Menu',
   components: {
-      BasicsNavigation,KeysNavigation,LiveNavigation 
+      BasicsNavigation,KeysNavigation,LiveNavigation
   }
 }
 

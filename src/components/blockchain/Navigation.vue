@@ -66,10 +66,13 @@ export default {
 
         // blockchain live components
         var live = [
+            '/blockchain/track',        
+            '/blockchain/account',
+            '/blockchain/transactions',
             '/blockchain/transfer',
-            '/blockchain/track',
             '/blockchain/contract',
-            '/blockchain/currency'
+            '/blockchain/currency',
+            '/blockchain/steal'
         ];
         for (var url of live){
             if(path === url){

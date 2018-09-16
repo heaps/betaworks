@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <Video title="Blockchain Explorer" url="https://www.youtube.com/embed/oMxCfnh7vgg" description=""/>
+  <div class="hello">   
+    <Video title="Transactions" url="https://www.youtube.com/embed/K5ZqFQ_utLo" description=""/>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import Video from '@/components/Video.vue';
 
 export default {
-  name: 'Explorer',
+  name: 'Transactions',
   components: {
       Video
   },  

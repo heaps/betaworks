@@ -26,9 +26,12 @@ import Signatures         from './components/blockchain/keys/Signatures.vue'
 import Transaction        from './components/blockchain/keys/Transaction.vue'
 
 // blockchain live components
+import Account            from './components/blockchain/live/Account.vue'
 import Contract           from './components/blockchain/live/Contract.vue'
 import Currency           from './components/blockchain/live/Currency.vue'
+import Steal              from './components/blockchain/live/Steal.vue'
 import Track              from './components/blockchain/live/Track.vue'
+import Transactions       from './components/blockchain/live/Transactions.vue'
 import Transfer           from './components/blockchain/live/Transfer.vue'
 
 Vue.use(Router)
@@ -90,6 +93,10 @@ export default new Router({
           component: Transaction
         },
         {
+          path: 'account',
+          component: Account
+        },
+        {
           path: 'contract',
           component: Contract
         },
@@ -98,9 +105,17 @@ export default new Router({
           component: Currency
         },
         {
+          path: 'steal',
+          component: Steal
+        },
+        {
           path: 'track',
           component: Track
         },
+        {
+          path: 'transactions',
+          component: Transactions
+        },        
         {
           path: 'transfer',
           component: Transfer
