@@ -49,7 +49,7 @@
               <li class="list-group-item"><a href="/#/blockchain/track">Blockchain Explorer</a></li>
               <li class="list-group-item"><a href="/#/blockchain/account">Create Account</a></li>
               <li class="list-group-item"><a href="/#/blockchain/transactions">Transactions</a></li>
-              <li class="list-group-item">Create a Transaction - Transfer Funds</li>
+              <li class="list-group-item"><a href="/#/blockchain/transfer">Create a Transaction - Transfer 1 Ether</a></li>
               <li class="list-group-item"><a href="/#/blockchain/contract">Create a Smart Contract</a></li>
               <li class="list-group-item">Create a Crypto Currency</li>
               <li class="list-group-item">Steal Crypto Currency (Not Really)</li>

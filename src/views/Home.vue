@@ -12,14 +12,18 @@
                     </a>
                 </li>
                 <li class="list-group-item bg-light">
-                    <h1 style="color:#eb7d3c;">Cybersecurity</h1>
+                    <a href="/#/cybersecurity/landingPage">                  
+                      <h1 style="color:#eb7d3c;">Cybersecurity</h1>
+                    </a>
                 </li>
                 <li class="list-group-item bg-light">
                     <h1 style="color:#72ac4d;">Artificial Intelligence (AI)</h1>
                 </li>
               </ul>              
               <div class="card-body">
-                <h1 style="color:#fdbf2d;">Cloud</h1>
+                <a href="/#/cloud/landingPage">
+                  <h1 style="color:#fdbf2d;">Cloud</h1>
+                </a>
               </div>
 
             </div>

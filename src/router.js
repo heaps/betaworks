@@ -34,6 +34,31 @@ import Track              from './components/blockchain/live/Track.vue'
 import Transactions       from './components/blockchain/live/Transactions.vue'
 import Transfer           from './components/blockchain/live/Transfer.vue'
 
+
+// cybersecurity section
+// -----------------------------------------------------------------------
+
+// cybersecurity landing page
+import CybersecurityLandingPage from './components/cybersecurity/LandingPage.vue'
+
+// cybersecurity components
+import Browser            from './components/cybersecurity/Browser.vue'
+import Tracking           from './components/cybersecurity/Tracking.vue'
+import Passwords          from './components/cybersecurity/Passwords.vue'
+import Threat             from './components/cybersecurity/Threat.vue'
+
+// cloud section
+// -----------------------------------------------------------------------
+
+// cybersecurity landing page
+import CloudLandingPage   from './components/cloud/LandingPage.vue'
+
+// cybersecurity components
+import Service            from './components/cloud/service.vue'
+import Server             from './components/cloud/server.vue'
+import Image              from './components/cloud/image.vue'
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -125,8 +150,53 @@ export default new Router({
     {
       path: '/cybersecurity',
       name: 'cybersecurity',
-      component: Cybersecurity
+      component: Cybersecurity,
+      children: [
+        {
+          path: 'landingPage',
+          component: CybersecurityLandingPage
+        },
+        {
+          path: 'browser',
+          component: Browser
+        },
+        {
+          path: 'tracking',
+          component: Tracking
+        },
+        {
+          path: 'passwords',
+          component: Passwords
+        },
+        {
+          path: 'threat',
+          component: Threat
+        }
+      ]      
     },
+    {
+      path: '/cloud',
+      name: 'cloud',
+      component: Cloud,
+      children: [
+        {
+          path: 'landingPage',
+          component: CloudLandingPage
+        },
+        {
+          path: 'service',
+          component: Service
+        },
+        {
+          path: 'server',
+          component: Server
+        },
+        {
+          path: 'image',
+          component: Image
+        }
+      ]      
+    },    
     {
       path: '/ai',
       name: 'ai',

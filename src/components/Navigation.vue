@@ -2,7 +2,7 @@
   <div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Digital Transformation</a>
+      <a class="navbar-brand" href="/#/">Digital Transformation</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,19 +16,12 @@
             <a class="nav-link" href="/#/blockchain/landingPage">Blockchain <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" v-bind:class="{ active: navItems.CybersecurityIsActive }">
-            <a class="nav-link" href="/#/cybersecurity">Cybersecurity</a>
+            <a class="nav-link" href="/#/cybersecurity/landingPage">Cybersecurity</a>
           </li>
           <li class="nav-item dropdown" v-bind:class="{ active: navItems.AiIsActive }">
-            <a class="nav-link dropdown-toggle" href="/#/ai" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              AI
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <a class="nav-link" href="/#/ai/landingPage">AI</a>
           </li>
+
           <li class="nav-item" v-bind:class="{ active: navItems.CloudIsActive }">
             <a class="nav-link disabled" href="/#/cloud">Cloud</a>
           </li>
