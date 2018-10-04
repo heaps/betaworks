@@ -23,7 +23,7 @@
           </li>
 
           <li class="nav-item" v-bind:class="{ active: navItems.CloudIsActive }">
-            <a class="nav-link disabled" href="/#/cloud">Cloud</a>
+            <a class="nav-link disabled" href="/#/cloud/landingPage">Cloud</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

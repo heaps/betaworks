@@ -3,7 +3,7 @@
 
 
             <div class="card bg-light mb-3">
-              <h5 class="card-header">Sections</h5>
+              <h5 class="card-header">Sections - List</h5>
     
               <ul class="list-group list-group-flush">
                 <li class="list-group-item bg-light">
